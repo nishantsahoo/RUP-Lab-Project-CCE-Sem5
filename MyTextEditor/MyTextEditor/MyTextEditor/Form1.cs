@@ -11,8 +11,10 @@ using System.IO;
 
 namespace MyTextEditor
 {
+
     public partial class Form1 : Form
     {
+        string currentUser = "nishant";
         public Form1()
         {
             InitializeComponent();
@@ -140,6 +142,33 @@ namespace MyTextEditor
         private void aboutUsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/nishantsahoo");
+        }
+
+        private void commitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.Text == "untitled")
+            {
+                // save first and then commit into a repository
+                saveAsToolStripMenuItem1_Click(sender, e);
+            }
+            else
+            {
+                saveToolStripMenuItem_Click(sender, e);
+                // string folderName = @"D:\openLL";
+                // string pathString = System.IO.Path.Combine(folderName, this.currentUser);
+                // pathString = System.IO.Path.Combine(folderName, "commit");
+                // System.IO.Directory.CreateDirectory(pathString);
+                // MessageBox.Show("Directory Made");
+                string source = this.Text;
+                string destination = @"D:\openLL\nishantsahoo\nishantsahoo-1.txt";
+                System.IO.File.Copy(source, destination, true);
+                MessageBox.Show("Committed");
+            }
+        }
+
+        private void pushToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         } // end of the function definition
     }
 }

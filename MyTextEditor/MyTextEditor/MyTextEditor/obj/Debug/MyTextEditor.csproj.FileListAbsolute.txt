@@ -19,3 +19,9 @@ D:\Github_NishantSahoo\DBMS\Lab_2\MyTextEditor\MyTextEditor\MyTextEditor\obj\Deb
 D:\Projects\RUP_Lab\MyTextEditor\MyTextEditor\MyTextEditor\bin\Debug\MyTextEditor.exe.config
 D:\Projects\RUP_Lab\MyTextEditor\MyTextEditor\MyTextEditor\obj\Debug\MyTextEditor.exe
 D:\Projects\RUP_Lab\MyTextEditor\MyTextEditor\MyTextEditor\obj\Debug\MyTextEditor.pdb
+D:\Projects\RUP_Lab\MyTextEditor\MyTextEditor\MyTextEditor\bin\Debug\MyTextEditor.exe
+D:\Projects\RUP_Lab\MyTextEditor\MyTextEditor\MyTextEditor\bin\Debug\MyTextEditor.pdb
+D:\Projects\RUP_Lab\MyTextEditor\MyTextEditor\MyTextEditor\obj\Debug\MyTextEditor.csprojResolveAssemblyReference.cache
+D:\Projects\RUP_Lab\MyTextEditor\MyTextEditor\MyTextEditor\obj\Debug\MyTextEditor.Form1.resources
+D:\Projects\RUP_Lab\MyTextEditor\MyTextEditor\MyTextEditor\obj\Debug\MyTextEditor.Properties.Resources.resources
+D:\Projects\RUP_Lab\MyTextEditor\MyTextEditor\MyTextEditor\obj\Debug\MyTextEditor.csproj.GenerateResource.Cache
