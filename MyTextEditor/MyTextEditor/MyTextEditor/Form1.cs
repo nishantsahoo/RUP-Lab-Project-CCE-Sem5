@@ -15,6 +15,7 @@ namespace MyTextEditor
     public partial class Form1 : Form
     {
         string currentUser = "nishant";
+        Boolean isCommitted = false;
         int commitCounter = 1;
         public Form1()
         {
@@ -66,6 +67,8 @@ namespace MyTextEditor
                 sw.Write(textBox1.Text);
                 sw.Flush();
                 sw.Close();
+                this.isCommitted = false;
+                MessageBox.Show("Changes saved");
             }
         }
 
@@ -81,6 +84,7 @@ namespace MyTextEditor
                 sw.Flush();
                 sw.Close();
                 this.Text = fName;
+                this.isCommitted = false;
                 MessageBox.Show("Changes saved");
             }
         }
@@ -148,23 +152,27 @@ namespace MyTextEditor
 
         private void commitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (this.Text == "untitled")
+            if (!this.isCommitted)
             {
-                // save first and then commit into a repository
-                saveAsToolStripMenuItem1_Click(sender, e);
+                if (this.Text == "untitled")
+                {
+                    // save first and then commit into a repository
+                    saveAsToolStripMenuItem1_Click(sender, e);
+                }
+                else
+                {
+                    saveToolStripMenuItem_Click(sender, e);
+                }
+
+                string source = this.Text;
+                string destination = @"D:\openLL\nishantsahoo\commits\commit-" + (this.commitCounter++) + ".txt";
+                System.IO.File.Copy(source, destination, true);
+                MessageBox.Show("Committed");
+                this.isCommitted = true;
             }
             else
             {
-                saveToolStripMenuItem_Click(sender, e);
-                // string folderName = @"D:\openLL";
-                // string pathString = System.IO.Path.Combine(folderName, this.currentUser);
-                // pathString = System.IO.Path.Combine(folderName, "commit");
-                // System.IO.Directory.CreateDirectory(pathString);
-                // MessageBox.Show("Directory Made");
-                string source = this.Text;
-                string destination = @"D:\openLL\nishantsahoo\nishantsahoo-" + (this.commitCounter++) + ".txt";
-                System.IO.File.Copy(source, destination, true);
-                MessageBox.Show("Committed");
+                MessageBox.Show("No changes found!");
             }
         }
 
