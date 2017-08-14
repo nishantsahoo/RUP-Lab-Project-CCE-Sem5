@@ -15,6 +15,7 @@ namespace MyTextEditor
     public partial class Form1 : Form
     {
         string currentUser = "nishant";
+        int commitCounter = 1;
         public Form1()
         {
             InitializeComponent();
@@ -80,6 +81,7 @@ namespace MyTextEditor
                 sw.Flush();
                 sw.Close();
                 this.Text = fName;
+                MessageBox.Show("Changes saved");
             }
         }
 
@@ -160,7 +162,7 @@ namespace MyTextEditor
                 // System.IO.Directory.CreateDirectory(pathString);
                 // MessageBox.Show("Directory Made");
                 string source = this.Text;
-                string destination = @"D:\openLL\nishantsahoo\nishantsahoo-1.txt";
+                string destination = @"D:\openLL\nishantsahoo\nishantsahoo-" + (this.commitCounter++) + ".txt";
                 System.IO.File.Copy(source, destination, true);
                 MessageBox.Show("Committed");
             }
