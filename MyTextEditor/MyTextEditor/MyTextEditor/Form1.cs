@@ -165,7 +165,7 @@ namespace MyTextEditor
                 }
 
                 string source = this.Text;
-                string destination = @"D:\openLL\nishantsahoo\commits\commit-" + (this.commitCounter++) + ".txt";
+                string destination = @"D:\openLL\" + this.currentUser + "\\commits\\commit-" + (this.commitCounter++) + ".txt";
                 System.IO.File.Copy(source, destination, true);
                 MessageBox.Show("Committed");
                 this.isCommitted = true;
@@ -178,7 +178,14 @@ namespace MyTextEditor
 
         private void pushToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (this.isCommitted)
+            {
 
+            }
+            else
+            {
+                MessageBox.Show("On branch - master");
+            }
         } // end of the function definition
     }
 }
