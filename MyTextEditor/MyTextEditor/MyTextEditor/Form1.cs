@@ -16,7 +16,7 @@ namespace MyTextEditor
     {
         string currentUser = "nishant";
         Boolean isCommitted = false;
-        int commitCounter = 1;
+        int commitCounter = 0;
         public Form1()
         {
             InitializeComponent();
@@ -165,7 +165,7 @@ namespace MyTextEditor
                 }
 
                 string source = this.Text;
-                string destination = @"D:\openLL\" + this.currentUser + "\\commits\\commit-" + (this.commitCounter++) + ".txt";
+                string destination = @"D:\openLL\" + this.currentUser + "\\commits\\commit-" + (++this.commitCounter) + ".txt";
                 System.IO.File.Copy(source, destination, true);
                 MessageBox.Show("Committed");
                 this.isCommitted = true;
@@ -180,7 +180,11 @@ namespace MyTextEditor
         {
             if (this.isCommitted)
             {
-
+                string source = @"D:\openLL\" + this.currentUser + "\\commits\\commit-" + (this.commitCounter) + ".txt";
+                string destination = @"D:\openLL\" + this.currentUser + "\\branches\\master\\master.txt";
+                System.IO.File.Copy(source, destination, true);
+                MessageBox.Show("Push successful");
+                this.isCommitted = false;
             }
             else
             {
