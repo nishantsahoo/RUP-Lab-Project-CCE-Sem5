@@ -191,5 +191,7 @@ namespace MyTextEditor
                 MessageBox.Show("On branch - master");
             }
         } // end of the function definition
+
+      
     }
 }
